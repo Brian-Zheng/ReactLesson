@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils */ \"./src/utils.js\");\n\r\n\r\n(0,_utils__WEBPACK_IMPORTED_MODULE_0__.log)('hello world')\n\n//# sourceURL=webpack://react_lesson/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils */ \"./src/utils.js\");\n\nvar obj = {\n  text: 'hello world!!!'\n};\nvar text = obj.text;\n(0,_utils__WEBPACK_IMPORTED_MODULE_0__.log)(text);\n\n//# sourceURL=webpack://react_lesson/./src/index.js?");
 
 /***/ }),
 
@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _uti
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"log\": () => (/* binding */ log)\n/* harmony export */ });\nfunction log(str) {\r\n console.log(str)   \r\n}\n\n//# sourceURL=webpack://react_lesson/./src/utils.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"log\": () => (/* binding */ log)\n/* harmony export */ });\nfunction log(str) {\n  console.log(str);\n}\n\n//# sourceURL=webpack://react_lesson/./src/utils.js?");
 
 /***/ })
 

@@ -9,11 +9,9 @@ class Title extends Component {
     render() {
         const t = 'HiHi'
 
-        function sayHi() {
-            alert('Hi~~~!')
-        }
-
-        return <h1 onClick={sayHi}>{t}</h1>
+        return <h1 onClick={() => { 
+          alert('hi')
+        }}>{t}</h1>
     }
 }
 

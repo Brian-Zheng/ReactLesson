@@ -1,0 +1,17 @@
+React 建置初始環境懶人包
+1. npx create-react-app my-app
+2. cd my-app
+3. npm start
+
+=================
+
+每一個React Component裡面都要有render的function
+
+=================
+
+JSX 
+    class → className or className={}
+    style → style={}
+            {} 裡面要放object
+            css -關鍵字會改成用小駝峰 font-size > fontSize
+    其他屬性大多類似原本HTML的語法

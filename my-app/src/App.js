@@ -1,31 +1,51 @@
 import React, { Component } from 'react'
 
-class Text extends Component {
-    render() {
-        return <p>text</p>
-    }
-}
-class Title extends Component {
-    render() {
-        const t = 'HiHi'
 
-        return <h1 onClick={() => { 
-          alert('hi')
-        }}>{t}</h1>
+class Test {
+    setName(name) {
+        this.name = name
+    }
+    say() {
+        console.log(this)
     }
 }
 
 class App extends Component {
-    render() {
-        const name = 'yoyo'
-        const style = {
-            color: 'red'
+
+    constructor() {
+        super()
+        this.state = {
+            title: 'hello',
+            counter: 1
         }
+
+        // this.handleClick = this.handleClick.bind(this)
+    }
+
+    // handleClick() {
+    //     this.setState({
+    //         counter: this.state.counter + 1
+    //     })
+    // }
+
+    handleClick = () => {
+        const t = new Test()
+        t.setName('hey')
+        t.say()
+        const func = t.say;
+        func()
+
+        this.setState({
+            counter: this.state.counter + 1
+        })
+    }
+
+    render() {
         return (
-            <div className={name + '111'} style={style}>
-                <Title />
-                <Text />
-            </div>
+            <div>
+                <h1 onClick={this.handleClick}>{this.state.title}</h1>
+                <div>{this.state.counter}</div>
+            </div >
         )
     }
 }

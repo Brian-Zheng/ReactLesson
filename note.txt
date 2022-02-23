@@ -15,3 +15,20 @@ JSX
             {} 裡面要放object
             css -關鍵字會改成用小駝峰 font-size > fontSize
     其他屬性大多類似原本HTML的語法
+
+=================
+
+A. Component 的 constructor 裡面一定要先呼叫 super()
+
+B.
+在宣告一個新個function時，如果需要使用到state的物件，由於this作用域的不同，可能會導致無法正常操作state，可透過:
+1. 在constructor裡面用 this.OOO this.OOO.bind(this) 把this綁定至OOO方法
+2. 將OOO宣告的方式寫為: OOO () = () => { XXXX } 的形式
+
+
+C.
+在呼叫方法時，或使用的方法中有this時， "this"是取決於呼叫的方式而決定!
+
+D.
+() => {}  箭頭函式取得this，會是定義該箭頭函式時的那一個方法裡面的this
+function () {} 宣告的函示的this，則是其他作用域的this

@@ -1,12 +1,25 @@
+import { proposalPlugins } from '@babel/preset-env/data/shipped-proposals'
 import React, { Component } from 'react'
 
+// class component
+// class Counter extends Component {
+//     render() {
+//         // return <div>{this.props.number}</div>
+//         return <div>{this.props.number}</div>
+//     }
+// }
 
-class Test {
-    setName(name) {
-        this.name = name
-    }
-    say() {
-        console.log(this)
+//functional component
+function Counter(props) {
+    const {number} = props
+    return (
+        <div>{'i am funtional Component ' + number}</div>
+    )
+}
+
+class Title extends Component {
+    render() {
+        return <h2>{this.props.children}</h2>
     }
 }
 
@@ -22,19 +35,7 @@ class App extends Component {
         // this.handleClick = this.handleClick.bind(this)
     }
 
-    // handleClick() {
-    //     this.setState({
-    //         counter: this.state.counter + 1
-    //     })
-    // }
-
     handleClick = () => {
-        const t = new Test()
-        t.setName('hey')
-        t.say()
-        const func = t.say;
-        func()
-
         this.setState({
             counter: this.state.counter + 1
         })
@@ -44,7 +45,12 @@ class App extends Component {
         return (
             <div>
                 <h1 onClick={this.handleClick}>{this.state.title}</h1>
-                <div>{this.state.counter}</div>
+                {/* <Title>
+                    <a href='https:google.com.tw'>
+                    {'hello, i am title'}
+                    </a>
+                </Title> */}
+                <Counter number={this.state.counter}/>
             </div >
         )
     }

@@ -32,3 +32,17 @@ C.
 D.
 () => {}  箭頭函式取得this，會是定義該箭頭函式時的那一個方法裡面的this
 function () {} 宣告的函示的this，則是其他作用域的this
+
+=================
+
+A.
+state 是原本元件內部的狀態
+prop 則是外部傳入的狀態
+        prop.children 可以想成是是一個預設的參數 (通常比較少用)
+
+B.
+當state改變時，會重新觸發該Component的render()
+
+C.
+如果 Component 只是要拿來render時(不需要state)，可以用functional component(code會比較簡潔)，
+若否，就用class component

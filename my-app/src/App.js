@@ -1,5 +1,13 @@
 import { proposalPlugins } from '@babel/preset-env/data/shipped-proposals'
 import React, { Component } from 'react'
+import styled from 'styled-components'
+// import "./style.css"
+
+
+const Header = styled.h1`
+    color: green;
+    font-size: 50px;
+`
 
 // class component
 // class Counter extends Component {
@@ -11,17 +19,25 @@ import React, { Component } from 'react'
 
 //functional component
 function Counter(props) {
-    const {number} = props
+    const { number } = props
     return (
         <div>{'i am funtional Component ' + number}</div>
     )
 }
 
-class Title extends Component {
-    render() {
-        return <h2>{this.props.children}</h2>
-    }
+
+const Title = (props) => {
+    return (
+        <Header onClick={() => {
+            props.changerCounter(Math.random())
+        }}>{props.text}</Header>
+    )
 }
+// class Title extends Component {
+//     render() {
+//         return <h2>{this.props.title}</h2>
+//     }
+// }
 
 class App extends Component {
 
@@ -41,16 +57,18 @@ class App extends Component {
         })
     }
 
+    changerCounter = (number) => {
+        this.setState({
+            counter: number
+        })
+    }
+
     render() {
         return (
             <div>
+                <Title changerCounter={this.changerCounter} text={this.state.title}></Title>
                 <h1 onClick={this.handleClick}>{this.state.title}</h1>
-                {/* <Title>
-                    <a href='https:google.com.tw'>
-                    {'hello, i am title'}
-                    </a>
-                </Title> */}
-                <Counter number={this.state.counter}/>
+                <Counter number={this.state.counter} />
             </div >
         )
     }
